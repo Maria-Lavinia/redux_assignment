@@ -2,8 +2,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
-// import { Counter } from './features/counter/counter';
 import { Problems } from './features/problems/problems';
+import { SignUp } from './features/users/components/SignUp';
 import { store } from './store'
 
 export default function App() {
@@ -12,6 +12,7 @@ export default function App() {
       <View style={styles.container}>
 
         <Problems></Problems>
+        <SignUp></SignUp>
       </View>
     </Provider>
   );
