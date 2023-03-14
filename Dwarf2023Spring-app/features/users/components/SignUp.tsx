@@ -4,10 +4,9 @@ import { Button, TextInput, View, StyleSheet } from "react-native";
 import { UserEntity } from "../userEntity";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../../store";
+import { signUp } from "../UsersSlice";
 
 export function SignUp() {
-
-const user: UserEntity[] = useSelector((state: RootState) => state.users.entities)
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -15,6 +14,9 @@ const user: UserEntity[] = useSelector((state: RootState) => state.users.entitie
   const dispatch = useDispatch<AppDispatch>();
 
   const handleSignup = () => {
+
+    dispatch(signUp(new UserEntity(username, password)));
+
     console.log("signup");
     clearForm();
   };
